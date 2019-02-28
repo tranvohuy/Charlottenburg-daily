@@ -5,6 +5,8 @@ import gspread
 import json
 from oauth2client.service_account import ServiceAccountCredentials
 
+import gspread_dataframe as gsdf
+from immo import immosearch
 
 from os import environ
 Consumer_key= environ['Consumer_key']
@@ -34,7 +36,8 @@ if __name__=='__main__':
     gc = get_client()
     sh = gc.open('Berlin-rental')
     timestamp = datetime.strftime(datetime.now(), '%Y-%m-%d')
-    messages = get_messages()
+    df = immosearch()
+
 
     print("about to update status...")
     try:
