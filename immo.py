@@ -66,7 +66,8 @@ def immosearch():
     w = 'Miete' # Miete oder Kauf
     while True:
       page+=1
-      url = 'https://www.immobilienscout24.de/Suche/S-T/P-%s/Wohnung-Miete/Berlin/Berlin' % (page)
+     # url = 'https://www.immobilienscout24.de/Suche/S-T/P-%s/Wohnung-Miete/Berlin/Berlin' % (page)
+      url = 'https://www.immobilienscout24.de/Suche/S-T/P-%s/Wohnung-Miete/Berlin/Berlin/Charlottenburg-Charlottenburg' % (page)
 
       resultlist_json = None
       while resultlist_json is None:
@@ -99,10 +100,7 @@ def immosearch():
           realEstate['title'] = realEstate_json['title']
 
           realEstate['numberOfRooms'] = realEstate_json['numberOfRooms']
-          realEstate['livingSpace'] = realEstate_json['livingSpace']
 
-          realEstate['numberOfRooms'] = realEstate_json['numberOfRooms']
-          realEstate['livingSpace'] = realEstate_json['livingSpace']
           realEstate['price'] = realEstate_json['price']['value']
           realEstate['warmprice'] = realEstate_json['calculatedPrice']['value']
           
