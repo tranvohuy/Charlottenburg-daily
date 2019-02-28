@@ -90,13 +90,7 @@ def immosearch():
           realEstate['address'] = realEstate_json['address']['description']['text']
           realEstate['postcode'] = realEstate_json['address']['postcode']
           realEstate['quarter'] = realEstate_json['address']['quarter']
-          try:
-              realEstate['lat'] = realEstate_json['address'][u'wgs84Coordinate']['latitude']
-              realEstate['lon'] = realEstate_json['address'][u'wgs84Coordinate']['longitude']
-          except:
-              realEstate['lat'] = None
-              realEstate['lon'] = None
-
+         
           realEstate['title'] = realEstate_json['title']
 
           realEstate['numberOfRooms'] = realEstate_json['numberOfRooms']
@@ -107,10 +101,8 @@ def immosearch():
           realEstate['privateOffer'] = realEstate_json['privateOffer']
           realEstate['balcony'] = realEstate_json['balcony']
           realEstate['builtInKitchen'] = realEstate_json['builtInKitchen']
-          realEstate['garden'] = realEstate_json['garden']
 
           realEstate['floorplan'] = realEstate_json['floorplan']
-          realEstate['from'] = realEstate_json['companyWideCustomerId']
           realEstate['ID'] = realEstate_json[u'@id']
           realEstate['url'] = u'https://www.immobilienscout24.de/expose/%s' % realEstate['ID']
 
