@@ -1,2 +1,4 @@
 # Charlottenburg-daily
-search Immobilienscout everyday and put on Twitter new found results
+Everyday:
+* Search Immobilienscout on new ads in Charlottenburg (Berlin
+* Update found results on Twitter and personal Google Sheet.
