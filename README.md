@@ -19,4 +19,3 @@ References:
    * [Google credential with json in Heroku](https://gist.github.com/hpiwowar/e8360c534444dc26f7fe65dabf138902)
    * [JSON parse](http://json.parser.online.fr/): very helpful to understand the data structure in Immobilienscout
 
-* [Simple Twitter Bot via GitHub](https://github.com/tranvohuy/simple_twitter_bot_Heroku_via_Github)
