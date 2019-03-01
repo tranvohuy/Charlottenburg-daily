@@ -17,7 +17,7 @@ auth = tweepy.OAuthHandler(Consumer_key, Consumer_secret)
 auth.set_access_token(Access_key, Access_secret)
 api = tweepy.API(auth)
 
-ddef get_client():
+def get_client():
     scopes = ['https://spreadsheets.google.com/feeds',
              'https://www.googleapis.com/auth/drive']
     json_creds = environ['google_cred']
