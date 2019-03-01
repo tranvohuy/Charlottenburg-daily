@@ -1,7 +1,7 @@
 # Charlottenburg-daily
 Everyday:
-* Search Immobilienscout on new ads in Charlottenburg (Berlin
-* Update found results on Twitter and personal Google Sheet.
+* Search Immobilienscout on new ads in Charlottenburg (Berlin)
+* Update found results on [Twitter](https://twitter.com/Berlinhouse1) and personal Google Sheet.
 
 
 References:
