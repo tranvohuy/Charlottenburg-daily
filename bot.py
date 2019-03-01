@@ -6,7 +6,7 @@ import json
 from oauth2client.service_account import ServiceAccountCredentials
 
 import gspread_dataframe as gsdf
-
+import pandas as pd
 from os import environ
 
 
