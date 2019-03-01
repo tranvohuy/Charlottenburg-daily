@@ -11,12 +11,6 @@ from os import environ
 
 
 
-
-
-auth = tweepy.OAuthHandler(Consumer_key, Consumer_secret)
-auth.set_access_token(Access_key, Access_secret)
-api = tweepy.API(auth)
-
 def get_client():
     scopes = ['https://spreadsheets.google.com/feeds',
              'https://www.googleapis.com/auth/drive']
