@@ -58,12 +58,11 @@ def immoscout24parser(url):
     except Exception as e:
         print("Fehler in immoscout24 parser: %s" % e)
 
-def immosearch():
+def immosearchnew(old_ids):
 
     immos = {}
     page = 0
-    k = 'Wohnung' # Wohnung oder Haus
-    w = 'Miete' # Miete oder Kauf
+
     while True:
       page+=1
      # url = 'https://www.immobilienscout24.de/Suche/S-T/P-%s/Wohnung-Miete/Berlin/Berlin' % (page)
@@ -83,10 +82,13 @@ def immosearch():
 
       # Get the data
       for resultlistEntry in resultlist_json['resultlistEntries'][0][u'resultlistEntry']:
+          if int(resultlistEntry[u'@id']) in old_ids:
+           # print('exist in the previous list.')
+            continue;
           realEstate_json = resultlistEntry[u'resultlist.realEstate']
 
           realEstate = {}
-
+  
           realEstate['address'] = realEstate_json['address']['description']['text']
           realEstate['postcode'] = realEstate_json['address']['postcode']
           realEstate['quarter'] = realEstate_json['address']['quarter']
@@ -94,6 +96,8 @@ def immosearch():
           realEstate['title'] = realEstate_json['title']
 
           realEstate['numberOfRooms'] = realEstate_json['numberOfRooms']
+          realEstate['livingSpace'] = realEstate_json['livingSpace']
+
 
           realEstate['price'] = realEstate_json['price']['value']
           realEstate['warmprice'] = realEstate_json['calculatedPrice']['value']
@@ -105,13 +109,27 @@ def immosearch():
           realEstate['floorplan'] = realEstate_json['floorplan']
           realEstate['ID'] = realEstate_json[u'@id']
           realEstate['url'] = u'https://www.immobilienscout24.de/expose/%s' % realEstate['ID']
+          
+          realEstate['modification'] = resultlistEntry[u'@modification']
+          realEstate['creation'] = resultlistEntry[u'@creation']
+          realEstate['publishDate'] = resultlistEntry[u'@publishDate']
 
+          realEstate['contact'] = " ".join([value for key, value in realEstate_json['contactDetails'].items() if key in  {'firstname', 'lastname', 'phoneNumber'}])
+        
+          
+          if realEstate['privateOffer'] == 'false':
+            realEstate['realtorCompanyName'] = realEstate_json['realtorCompanyName']
+          else:
+            realEstate['realtorCompanyName'] = 'private'
+          
           immos[realEstate['ID']] = realEstate
 
-      print('Scrape Page %i/%i (%i Immobilien %s %s gefunden)' % (page, numberOfPages, len(immos), k, w))
+      print('Scrape Page %i/%i (%i Immobilien gefunden)' % (page, numberOfPages, len(immos)))
       #end while
     print("Scraped %i Immos" % len(immos))
     df = pd.DataFrame(immos).T
     df.index.name = 'ID'
+
+    return df
 
     return df
