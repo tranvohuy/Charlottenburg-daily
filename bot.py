@@ -42,9 +42,9 @@ def update_tweet(df_new):
                                                                   row['numberOfRooms'], row['livingSpace'], row['url'])
         count +=1
         if count ==ad_limit:
-          count ==0
+          count =0
           ad_limit = 3
-          print(msg)
+          print(len(msg), msg)
           api.update_status(msg)
           msg ='(cont.)'
       if count>0:
