@@ -14,13 +14,7 @@ def send_email(ads_msgs):
     body = "\n".join(ads_msgs)
     
 
-    email_text = """  
-    From: %s  
-    To: %s  
-    Subject: %s
-
-    %s
-    """ % (sent_from,  to, subject, body)
+    email_text = """Subject:%s\n\n  %s""" % (subject, body)
     print(email_text)
     try:
         server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
