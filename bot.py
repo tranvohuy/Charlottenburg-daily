@@ -9,7 +9,7 @@ import gspread_dataframe as gsdf
 import pandas as pd
 from os import environ
 
-from send_gmail import send_gmail
+from send_email import send_email
 
 
 def get_client():
@@ -88,10 +88,10 @@ if __name__=='__main__':
     ads_msgs = create_msgs(df_new)
    # msgs = ['(cont.) https://www.immobilienscout24.de/expose/110211852', '(cold)1200€,(warm)1450€,2rooms,81m²→']
 
-    print(msgs)
+    print(ads_msgs)
     #update_tweet(df_new)
-    update_tweet(msgs)
-    send_gmail(ads_msgs)
+    update_tweet(ads_msgs)
+    send_email(ads_msgs)
             
     if df_new.shape[0]==0:
       exit()
