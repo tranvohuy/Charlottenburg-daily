@@ -9,6 +9,7 @@ import gspread_dataframe as gsdf
 import pandas as pd
 from os import environ
 
+from send_gmail import send_gmail
 
 
 def get_client():
@@ -50,6 +51,15 @@ def update_tweet(df_new):
       if count>0:
         api.update_status(msg) 
 
+def create_msgs(df_new):
+    if df_new.shape[0]==0
+        return ['No new ads in Charlottenburg today.']
+    msgs = [''%s new ads in Charlottenburg today' %(df_new.shape[0])]
+    for index, row in df_new.iterrros():
+        msgs.append( '(cold)%s€,(warm)%s€,%srooms,%sm²→ %s' %(row['price'], row['warmprice'], \
+                                                                  row['numberOfRooms'], row['livingSpace'], row['url']))
+    return msgs
+    
       
 #---main program----
 if __name__=='__main__':
@@ -64,7 +74,11 @@ if __name__=='__main__':
 
     df_new = immosearchnew(old_ids)
     print('ready to tweet')
-    update_tweet(df_new)
+    msgs = create_msgs(df_new)
+   # update_tweet(df_new)
+    #update_tweet(msgs)
+    send_gmail(msgs)
+            
     if df_new.shape[0]==0:
       exit()
 
