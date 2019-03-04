@@ -86,10 +86,9 @@ if __name__=='__main__':
     df_new = immosearchnew(old_ids)
     print('ready to tweet')
     ads_msgs = create_msgs(df_new)
-   # msgs = ['(cont.) https://www.immobilienscout24.de/expose/110211852', '(cold)1200€,(warm)1450€,2rooms,81m²→']
-
+ 
     print(ads_msgs)
-    #update_tweet(df_new)
+ 
     update_tweet(ads_msgs)
     send_email(ads_msgs)
             
@@ -102,4 +101,4 @@ if __name__=='__main__':
     df.index.name = 'ID'
 
     
-   gsdf.set_with_dataframe(wks, df, resize = True)
+    gsdf.set_with_dataframe(wks, df, resize = True)
