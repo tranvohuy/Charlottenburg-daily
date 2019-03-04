@@ -52,7 +52,7 @@ def update_tweet(df_new):
         api.update_status(msg) 
 
 def create_msgs(df_new):
-    if df_new.shape[0]==0
+    if df_new.shape[0]==0:
         return ['No new ads in Charlottenburg today.']
     msgs = [''%s new ads in Charlottenburg today' %(df_new.shape[0])]
     for index, row in df_new.iterrros():
