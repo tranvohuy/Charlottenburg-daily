@@ -25,7 +25,7 @@ def send_gmail(ads_msgs):
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
     server.ehlo()
     server.login(gmail_bot, gmail_bot_pwd)
-    server.sendmail(sent_from, to, email_text)
+    server.sendmail(sent_from, to, email_text.encode())
     server.close()
 
     print('Something went wrong...')
