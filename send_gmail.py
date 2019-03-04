@@ -10,7 +10,8 @@ def send_gmail(ads_msgs):
     sent_from = gmail_bot
     to = environ['gmail_to']  
     subject = 'Charlottenburg new rental ads'  
-    body = ads_msgs
+    body = "\n".join(ads_msgs)
+    
 
     email_text = """\  
     From: %s  
