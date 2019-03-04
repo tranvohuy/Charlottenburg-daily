@@ -1,0 +1,31 @@
+from os import environ
+
+import smtplib
+
+def send_gmail(ads_msgs):
+    gmail_bot = environ['gmail_bot']
+    gmail_bot_pwd = environ['gmail_bot_pwd']
+
+    sent_from = gmail_bot
+    to = environ['gmail_to']  
+    subject = 'Charlottenburg new rental ads'  
+    body = ads_msgs
+
+    email_text = """\  
+    From: %s  
+    To: %s  
+    Subject: %s
+
+    %s
+    """ % (sent_from, ", ".join(to), subject, body)
+
+    try:  
+        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+        server.ehlo()
+        server.login(gmail_bot, gmail_bot_pwd)
+        server.sendmail(sent_from, to, email_text)
+        server.close()
+
+        print('Email sent!')
+    except:  
+        print('Something went wrong...')
