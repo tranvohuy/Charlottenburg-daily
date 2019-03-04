@@ -39,7 +39,7 @@ def update_tweet(df_new):
       ad_limit = 2
       count = 0
       for index, row in df_new.iterrows():
-        msg = msg + '\n' + '(cold)%s€,(warm)%s€,%srooms,%sm²→ %s' %(row['price'], row['warmprice'], \
+        msg = msg + '\n' + '(cold)%s,(warm)%s,%srooms,%sm²→ %s' %(row['price'], row['warmprice'], \
                                                                   row['numberOfRooms'], row['livingSpace'], row['url'])
         count +=1
         if count ==ad_limit:
