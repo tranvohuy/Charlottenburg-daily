@@ -36,7 +36,7 @@ def update_tweet(ads_msgs):
         status_temp = status + '\n' + ads_msgs[i]
         if (len(status_temp)>280):
             api.update_status(status)
-            status = '(cont.)\n' + msg
+            status = '(cont.)\n' + ads_msgs[i]
         else:
             status = status_temp
     if len(status)>0:
