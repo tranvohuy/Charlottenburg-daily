@@ -22,10 +22,12 @@ def send_email(ads_msgs):
     %s
     """ % (sent_from,  to, subject, body)
     print(email_text)
-    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-    server.ehlo()
-    server.login(gmail_bot, gmail_bot_pwd)
-    server.sendmail(sent_from, to, email_text.encode())
-    server.close()
-
-    print('Something went wrong...')
+    try:
+        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+        server.ehlo()
+        server.login(gmail_bot, gmail_bot_pwd)
+        server.sendmail(sent_from, to, email_text.encode())
+        server.close()
+        print('Email sent.')
+    except:
+        print('Something went wrong...')
