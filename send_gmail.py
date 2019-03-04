@@ -20,7 +20,7 @@ def send_gmail(ads_msgs):
     Subject: %s
 
     %s
-    """ % (sent_from, ", ".join(to), subject, body)
+    """ % (sent_from,  to, subject, body)
     print(email_text)
     try:  
         server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
