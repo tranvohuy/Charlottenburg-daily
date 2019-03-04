@@ -22,7 +22,7 @@ def get_client():
     gc = gspread.authorize(creds)
     return gc
 
-def update_tweet(ads_mgs):
+def update_tweet(ads_msgs):
     consumer_key= environ['consumer_key']
     consumer_secret = environ['consumer_secret']
     access_key = environ['access_key']
@@ -31,9 +31,9 @@ def update_tweet(ads_mgs):
     auth.set_access_token(access_key, access_secret)
     api = tweepy.API(auth)
     
-    status = ads_mgs
-    for i in range(1,len(ads_mgs)):
-        status_temp = status + '\n' + ads_mgs[i]
+    status = ads_msgs[0]
+    for i in range(1,len(ads_msgs)):
+        status_temp = status + '\n' + ads_msgs[i]
         if (len(status_temp)>280):
             api.update_status(status)
             status = '(cont.)\n' + msg
