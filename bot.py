@@ -75,7 +75,7 @@ if __name__=='__main__':
   #  df_new = immosearchnew(old_ids)
     print('ready to tweet')
   #  msgs = create_msgs(df_new)
-    msgs = ['testing']
+    msgs = ['testing', 'and testing']
    # update_tweet(df_new)
     #update_tweet(msgs)
     send_gmail(msgs)
