@@ -74,7 +74,7 @@ if __name__=='__main__':
 
    # df_new = immosearchnew(old_ids)
     print('ready to tweet')
-    msgs = ['(cont.) https://www.immobilienscout24.de/expose/110211852', '(cold)1200€,(warm)1450€,2rooms,81m²→']
+    msgs = ['(cont.) https://www.immobilienscout24.de/expose/110211852', '(cold)1200,(warm)1450,2rooms,81m²→']
 
     print(msgs)
    # update_tweet(df_new)
