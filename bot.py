@@ -31,16 +31,15 @@ def update_tweet(ads_mgs):
     auth.set_access_token(access_key, access_secret)
     api = tweepy.API(auth)
     
-    status = ''
-    for msg in ads_mgs:
-       
-        status_temp = msg if len(status)==0 else status + '\n'+ msg
+    status = ads_mgs
+    for i in range(1,len(ads_mgs)):
+        status_temp = status + '\n' + ads_mgs[i]
         if (len(status_temp)>280):
             api.update_status(status)
             status = '(cont.)\n' + msg
         else:
             status = status_temp
-     if len(status)>0:
+    if len(status)>0:
         api.update_status(status)
    #
 #    if df_new.shape[0] == 0:
