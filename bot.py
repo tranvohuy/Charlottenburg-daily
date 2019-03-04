@@ -56,7 +56,7 @@ def create_msgs(df_new):
         return ['No new ads in Charlottenburg today.']
     msgs = ['%s new ads in Charlottenburg today' %(df_new.shape[0])]
     for index, row in df_new.iterrows():
-        msgs.append( '(cold)%s,(warm)%s,%srooms,%sm²→ %s' %(row['price'], row['warmprice'], \
+        msgs.append( '(cold)%s€,(warm)%s€,%srooms,%sm²→ %s' %(row['price'], row['warmprice'], \
                                                                   row['numberOfRooms'], row['livingSpace'], row['url']))
     return msgs
     
@@ -74,7 +74,7 @@ if __name__=='__main__':
 
    # df_new = immosearchnew(old_ids)
     print('ready to tweet')
-    msgs = ['(cont.) https://www.immobilienscout24.de/expose/110211852', '(cold)1200,(warm)1450,2rooms,81m²→']
+    msgs = ['(cont.) https://www.immobilienscout24.de/expose/110211852', '(cold)1200€,(warm)1450€,2rooms,81m²→']
 
     print(msgs)
    # update_tweet(df_new)
