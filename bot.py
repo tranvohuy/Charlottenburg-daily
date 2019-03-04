@@ -72,10 +72,10 @@ if __name__=='__main__':
     old_ids = df_old['ID'].unique()
 
 
-  #  df_new = immosearchnew(old_ids)
+    df_new = immosearchnew(old_ids)
     print('ready to tweet')
-  #  msgs = create_msgs(df_new)
-    msgs = ['testing', 'and testing']
+    msgs = create_msgs(df_new)
+    print(msgs)
    # update_tweet(df_new)
     #update_tweet(msgs)
     send_gmail(msgs)
