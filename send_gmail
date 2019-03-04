@@ -1,5 +1,6 @@
 from os import environ
 
+#this is a less secure method. Google auth is better but I don't know how to do it yet.
 import smtplib
 
 def send_gmail(ads_msgs):
