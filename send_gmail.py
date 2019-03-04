@@ -9,6 +9,7 @@ def send_gmail(ads_msgs):
 
     sent_from = gmail_bot
     to = environ['gmail_to']  
+    print(to)
     subject = 'Charlottenburg new rental ads'  
     body = "\n".join(ads_msgs)
     
@@ -20,7 +21,7 @@ def send_gmail(ads_msgs):
 
     %s
     """ % (sent_from, ", ".join(to), subject, body)
-
+    print(email_text)
     try:  
         server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
         server.ehlo()
