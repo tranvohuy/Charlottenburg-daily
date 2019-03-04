@@ -14,7 +14,7 @@ def send_email(ads_msgs):
     body = "\n".join(ads_msgs)
     
 
-    email_text = """\  
+    email_text = """  
     From: %s  
     To: %s  
     Subject: %s
