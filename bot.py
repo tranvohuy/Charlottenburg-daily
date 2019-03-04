@@ -32,15 +32,19 @@ def update_tweet(ads_msgs):
     api = tweepy.API(auth)
     
     status = ads_msgs[0]
-    for i in range(1,len(ads_msgs)):
-        status_temp = status + '\n' + ads_msgs[i]
-        if (len(status_temp)>280):
-            api.update_status(status)
-            status = '(cont.)\n' + ads_msgs[i]
-        else:
-            status = status_temp
-    if len(status)>0:
+    
+    if len(ads_msgs)==1:
         api.update_status(status)
+    else:
+        for i in range(1,len(ads_msgs)):
+            status_temp = status + '\n' + ads_msgs[i]
+            if (len(status_temp)>280):
+                api.update_status(status)
+                status = '(cont.)\n' + ads_msgs[i]
+            else:
+                status = status_temp
+        if len(status)>0:
+            api.update_status(status)
    #
 #    if df_new.shape[0] == 0:
 #      api.update_status('No new ads in Charlottenburg today.')
