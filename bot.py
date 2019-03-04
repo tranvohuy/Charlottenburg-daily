@@ -72,22 +72,23 @@ if __name__=='__main__':
     old_ids = df_old['ID'].unique()
 
 
-   # df_new = immosearchnew(old_ids)
+    df_new = immosearchnew(old_ids)
     print('ready to tweet')
-    msgs = ['(cont.) https://www.immobilienscout24.de/expose/110211852', '(cold)1200€,(warm)1450€,2rooms,81m²→']
+    ads_msgs = create_msgs(df_new)
+   # msgs = ['(cont.) https://www.immobilienscout24.de/expose/110211852', '(cold)1200€,(warm)1450€,2rooms,81m²→']
 
-    print(msgs)
-   # update_tweet(df_new)
+    #print(msgs)
+    #update_tweet(df_new)
     #update_tweet(msgs)
-    send_gmail(msgs)
+    send_gmail(ads_msgs)
             
     if df_new.shape[0]==0:
       exit()
 
     #-----now save to the file------
-   # frame = [df_new, df_old]
-   # df = pd.concat(frame, ignore_index = True)
-   # df.index.name = 'ID'
+    frame = [df_new, df_old]
+    df = pd.concat(frame, ignore_index = True)
+    df.index.name = 'ID'
 
     
-    #gsdf.set_with_dataframe(wks, df, resize = True)
+    gsdf.set_with_dataframe(wks, df, resize = True)
