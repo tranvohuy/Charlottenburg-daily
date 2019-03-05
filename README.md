@@ -3,7 +3,7 @@ Everyday:
 * Search Immobilienscout on new ads in Charlottenburg (Berlin)
 * Update found results 
   * on [Twitter](https://twitter.com/Berlinhouse1) 
-  * on personal Google Sheet
+  * on personal Google Sheet with more details of the ads
   * to be sent to personal emails
 
 
