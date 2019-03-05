@@ -1,6 +1,7 @@
 from os import environ
 
-#this is a less secure method. Google auth is better but I don't know how to do it yet.
+#smtplib is a less secure method than google auth. 
+# To use google auth, we can look at https://github.com/shankarj67/python-gmail-api
 import smtplib
 import re
 
