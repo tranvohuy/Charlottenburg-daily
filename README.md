@@ -21,4 +21,8 @@ References:
 * Json
    * [Google credential with json in Heroku](https://gist.github.com/hpiwowar/e8360c534444dc26f7fe65dabf138902)
    * [JSON parse](http://json.parser.online.fr/): very helpful to understand the data structure in Immobilienscout
+   
+ * Send email:
+   * Using [Gmail API](https://github.com/shankarj67/python-gmail-api)
+   * Using [smtplib](https://stackoverflow.com/questions/10147455/how-to-send-an-email-with-gmail-as-provider-using-python)
 
