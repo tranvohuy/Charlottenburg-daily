@@ -1,14 +1,25 @@
 from os import environ
 
-#this is a less secure method. Google auth is better but I don't know how to do it yet.
+#smtplib is a less secure method than google auth. 
+# To use google auth, we can look at https://github.com/shankarj67/python-gmail-api
 import smtplib
+import re
 
 def send_email(ads_msgs):
     gmail_bot = environ['gmail_bot']
     gmail_bot_pwd = environ['gmail_bot_pwd']
 
     sent_from = gmail_bot
-    to = environ['email_to']  
+    to = environ['email_to']
+    to = to.replace(' ','')
+    to = re.split(',',to)
+    #example for the value in 'email_to': 'user1@amail.com, user2@gmai.com'
+    #each email is separated by a commas ','. Blank spaces are allowed
+    #'user1@amail.com,     user2@gmai.com' is also valid
+    #'user1@gmail.com,user2@dkjf.com' is also valid
+    #'user1@gmail.com,user2@dkjf.com,' is NOT valid
+    
+    
     print(to)
     subject = 'Charlottenburg new rental ads'  
     body = "\n".join(ads_msgs)
