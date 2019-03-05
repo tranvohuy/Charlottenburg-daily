@@ -45,33 +45,14 @@ def update_tweet(ads_msgs):
                 status = status_temp
         if len(status)>0:
             api.update_status(status)
-   #
-#    if df_new.shape[0] == 0:
-#      api.update_status('No new ads in Charlottenburg today.')
-#    else:
-#      msg = '%s new ads in Charlottenburg today' %(df_new.shape[0])
-#      
-#      ad_limit = 2
-#      count = 0
-#      for index, row in df_new.iterrows():
-#        msg = msg + '\n' + '(cold)%s€,(warm)%s€,%srooms,%sm²→ %s' %(row['price'], row['warmprice'], \
-#                                                                  row['numberOfRooms'], row['livingSpace'], row['url'])
-#        count +=1
-#        if count ==ad_limit:
-#          count =0
-#          ad_limit = 3
-#          print(len(msg), msg)
-#          api.update_status(msg)
-#          msg ='(cont.)'
-#      if count>0:
-#        api.update_status(msg) 
+
 
 def create_msgs(df_new):
     if df_new.shape[0]==0:
         return ['No new ads in Charlottenburg today.']
     msgs = ['%s new ads in Charlottenburg today' %(df_new.shape[0])]
     for index, row in df_new.iterrows():
-        msgs.append( '(cold)%s€,(warm)%s€,%srooms,%sm²→ %s' %(row['price'], row['warmprice'], \
+        msgs.append( '(cold)%s€,(warm)%s€, %srooms, %sm²→ %s' %(row['price'], row['warmprice'], \
                                                                   row['numberOfRooms'], row['livingSpace'], row['url']))
     return msgs
     
