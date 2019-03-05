@@ -25,4 +25,7 @@ References:
  * Send email:
    * Using [Gmail API](https://github.com/shankarj67/python-gmail-api)
    * Using [smtplib](https://stackoverflow.com/questions/10147455/how-to-send-an-email-with-gmail-as-provider-using-python)
+   
+For future:
+ * [Google](http://mfcabrera.com/blog/2015/1/17/ichbineinberliner.html) [map](https://github.com/mfcabrera/ichbineinberliner)
 
