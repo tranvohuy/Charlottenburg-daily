@@ -52,7 +52,7 @@ def create_msgs(df_new):
         return ['No new ads in Charlottenburg today.']
     msgs = ['%s new ads in Charlottenburg today' %(df_new.shape[0])]
     for index, row in df_new.iterrows():
-        msgs.append( '(cold)%s€,(warm)%s€, %srooms, %sm²→ %s' %(row['price'], row['warmprice'], \
+        msgs.append( '(cold)%s€, (warm)%s€, %srooms, %sm²→ %s' %(row['price'], row['warmprice'], \
                                                                   row['numberOfRooms'], row['livingSpace'], row['url']))
     return msgs
     
