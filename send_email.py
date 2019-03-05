@@ -2,6 +2,7 @@ from os import environ
 
 #this is a less secure method. Google auth is better but I don't know how to do it yet.
 import smtplib
+import re
 
 def send_email(ads_msgs):
     gmail_bot = environ['gmail_bot']
@@ -9,6 +10,11 @@ def send_email(ads_msgs):
 
     sent_from = gmail_bot
     to = environ['email_to']  
+    to = re.split(', ',to)
+    #example for the value in 'email_to': 'user1@amail.com,user2@gmai.com'
+    #each email is separated by a commas ',', no blank space.
+    #'user1@amail.com, user2@gmai.com' is not valid
+    
     print(to)
     subject = 'Charlottenburg new rental ads'  
     body = "\n".join(ads_msgs)
