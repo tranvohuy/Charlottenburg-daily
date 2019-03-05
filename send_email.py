@@ -16,6 +16,8 @@ def send_email(ads_msgs):
     #each email is separated by a commas ','. Blank spaces are allowed
     #'user1@amail.com,     user2@gmai.com' is also valid
     #'user1@gmail.com,user2@dkjf.com' is also valid
+    #'user1@gmail.com,user2@dkjf.com,' is NOT valid
+    
     
     print(to)
     subject = 'Charlottenburg new rental ads'  
