@@ -11,8 +11,8 @@ def send_email(ads_msgs):
 
     sent_from = gmail_bot
     to = environ['email_to']
-    to = to.replace(' ','')
-    to = re.split(',',to)
+    to = to.replace(',',' ')
+    to = to.split()
     '''
     Example for the value in 'email_to': 'user1@amail.com, user2@gmai.com'
     Each email is separated by a commas ','. Blank spaces are allowed
