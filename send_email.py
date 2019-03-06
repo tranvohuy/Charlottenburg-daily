@@ -17,8 +17,8 @@ def send_email(ads_msgs):
     Example for the value in 'email_to': 'user1@amail.com, user2@gmai.com'
     Each email is separated by a commas ','. Blank spaces are allowed
     'user1@amail.com,     user2@gmai.com' is also valid
-    'user1@gmail.com,user2@dkjf.com' is also valid
-    'user1@gmail.com,user2@dkjf.com,' is NOT valid
+    'user1@gmail.com,    user2@dkjf.com' is also valid
+    'user1@gmail.com,    user2@dkjf.com,' is also valid
     '''
     
     
