@@ -1,12 +1,13 @@
 # Charlottenburg-daily
-Everyday:
+## Everyday:
 * Search Immobilienscout on new ads in Charlottenburg (Berlin)
 * Update found results 
   * on [Twitter](https://twitter.com/Berlinhouse1) 
   * on personal Google Sheet with more details of the ads
   * to be sent to personal emails
 
-To run the project, you need to do several things (more details in the reference):
+## Run the project
+You need to do several things (more details in the reference):
  * Clone/fork this repository to your github.
  * Sign up for an Heroku account, create a new app. Deploy the app via Github.
  * Sign up for Twitter and [Twitter Dev](https://developer.twitter.com/en/dashboard) to have Twitter API keys (4 keys). Store these keys in the Heroku app, in ```Config Vars```. These values will be read later by ```os.environ[...]```
@@ -16,7 +17,7 @@ To run the project, you need to do several things (more details in the reference
       
  * You can check, or run Heroku app by going to the top right corner, ```More```, ```Run console```, type ```worker```. Heroku will run ```bot.py```.
 
-References:
+## References:
 * Search on Immobilienscout24:
   * https://github.com/balzer82/immoscraper, using [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
   * https://github.com/asmaier/ImmoSpider, using [Scrapy](https://scrapy.org/doc/)
@@ -35,7 +36,7 @@ References:
    * Using [Gmail API](https://github.com/shankarj67/python-gmail-api)
    * Using [smtplib](https://stackoverflow.com/questions/10147455/how-to-send-an-email-with-gmail-as-provider-using-python)
    
-For future:
+## For future:
  * [Google](http://mfcabrera.com/blog/2015/1/17/ichbineinberliner.html) [map](https://github.com/mfcabrera/ichbineinberliner)
  * Send results to Messenger (Facebook)
 
