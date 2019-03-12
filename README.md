@@ -9,8 +9,9 @@
 ## Run the project
 You need to do several things (more details in the reference):
  * Clone/fork this repository to your github.
- * Sign up for an Heroku account, create a new app. Deploy the app via Github.
+ * Sign up for an Heroku account, create a new app. Deploy the app via Github. 
  * Sign up for Twitter and [Twitter Dev](https://developer.twitter.com/en/dashboard) to have Twitter API keys (4 keys). Store these keys in the Heroku app, in ```Config Vars```. These values will be read later by ```os.environ[...]```
+   * An instruction for Heroku and Twitter sign up can be found [here](https://tutorials.botsfloor.com/how-to-code-a-simple-twitter-bot-for-complete-beginners-36e37231e67d)
  * To connect to your Google Sheet, you need to create an authorization json file for Google Sheet API in [Google Console](https://console.developers.google.com/apis/dashboard). Store the file in Heroku app, in ```Config Vars```
  * To send email, you need to enter the emails you want to send in ```Config Vars```
  ![ConfigVars](readmefiles/ConfigVars.png)
