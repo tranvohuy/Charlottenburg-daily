@@ -16,7 +16,7 @@ You need to do several things (more details in the reference):
  * To send email, you need to enter the emails you want to send in ```Config Vars```
  ![ConfigVars](readmefiles/ConfigVars.png)
       
- * You can check, or run Heroku app by going to the top right corner, ```More```, ```Run console```, type ```worker```. Heroku will run ```bot.py```.
+ * You can check, or run Heroku app by going to the top right corner, ```More```, ```Run console```, type ```worker```. Heroku will run [```bot.py```](bot.py).
 
 ## References:
 * Search on Immobilienscout24:
