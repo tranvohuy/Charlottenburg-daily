@@ -81,6 +81,7 @@ if __name__=='__main__':
       exit()
 
     #-----now save to the file------
+    df_keep = df_old[df_old['ID'] in ids_keep]
     frame = [df_new, df_keep]
     df = pd.concat(frame, ignore_index = True)
     df.index.name = 'ID'
