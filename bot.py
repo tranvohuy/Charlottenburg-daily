@@ -67,7 +67,7 @@ if __name__=='__main__':
     #a list of old id
     if df_old.shape[0]!=0:
         old_ids = df_old['ID'].unique()
-    else: #there is no ads in gsheet file
+    else: #there is no ads in gsheet file, this is for the first time running the program
         old_ids = []
 
 
