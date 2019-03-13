@@ -67,7 +67,7 @@ def immosearchnew(old_ids):
     ids_keep: a list, ids of ads that are still found in the search. We want to discard ads that no longer appears. 
     When they re-appear (or are reposted), they become new ads.
     '''
-    immos_new = {}
+    immos = {}
     ids_keep = []
     page = 0
 
