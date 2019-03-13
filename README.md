@@ -15,6 +15,8 @@ You need to do several things (more details in the reference):
  * To connect to your Google Sheet, you need to create an authorization json file for Google Sheet API in [Google Console](https://console.developers.google.com/apis/dashboard). Store the file in Heroku app, in ```Config Vars```
    * Create an appropriate gsheet, named ```'Charlottenburg'```. 
    * Share this sheet with the email from gsheet API json file.
+   * The first time running the program, you should turn off [```updatet_tweet(ads_msgs)```](https://github.com/tranvohuy/Charlottenburg-daily/blob/f9803a5a23d3be2faf269275eb214b22ae1539cf/bot.py#L77) since there will be a lot of new ads.
+   
  * To send email, you need to enter the emails you want to send in ```Config Vars```
  ![ConfigVars](readmefiles/ConfigVars.png)
       
