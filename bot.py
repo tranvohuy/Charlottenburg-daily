@@ -68,7 +68,7 @@ if __name__=='__main__':
     old_ids = df_old['ID'].unique()
 
 
-    df_new = immosearchnew(old_ids)
+    [df_new, df_keep] = immosearchnew(old_ids)
     print('ready to tweet')
     ads_msgs = create_msgs(df_new)
  
@@ -81,7 +81,7 @@ if __name__=='__main__':
       exit()
 
     #-----now save to the file------
-    frame = [df_new, df_old]
+    frame = [df_new, df_keep]
     df = pd.concat(frame, ignore_index = True)
     df.index.name = 'ID'
 
