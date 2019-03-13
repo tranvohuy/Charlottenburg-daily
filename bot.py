@@ -68,7 +68,7 @@ if __name__=='__main__':
     old_ids = df_old['ID'].unique()
 
 
-    [df_new, df_keep] = immosearchnew(old_ids)
+    [df_new, ids_keep] = immosearchnew(old_ids)
     print('ready to tweet')
     ads_msgs = create_msgs(df_new)
  
