@@ -65,7 +65,10 @@ if __name__=='__main__':
 
     df_old = gsdf.get_as_dataframe(wks)
     #a list of old id
-    old_ids = df_old['ID'].unique()
+    if df_old.shape[0]!=0:
+        old_ids = df_old['ID'].unique()
+    else: #there is no ads in gsheet file
+        old_ids = []
 
 
     [df_new, ids_keep] = immosearchnew(old_ids)
@@ -82,7 +85,7 @@ if __name__=='__main__':
 
     #-----now save to the file------
     df_keep = df_old[df_old['ID'].isin(ids_keep)]
-    print('Delete {} old ads'.format(df_old.shape[0]-df_keep.shape[0]))
+    print('Delete {} old ads'.format(df_old.shape[0] - df_keep.shape[0]))
     frame = [df_new, df_keep]
     df = pd.concat(frame, ignore_index = True)
     df.index.name = 'ID'
