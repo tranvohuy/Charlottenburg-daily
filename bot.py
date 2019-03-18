@@ -47,7 +47,7 @@ def update_tweet(ads_msgs):
             api.update_status(status)
 
 
-def create_msgs(df_new):
+def create_twitter_msgs(df_new):
     if df_new.shape[0]==0:
         return ['No new ads in Charlottenburg today.']
     msgs = ['%s new ads in #Charlottenburg today' %(df_new.shape[0])]
@@ -56,7 +56,16 @@ def create_msgs(df_new):
                                                                   row['numberOfRooms'], row['livingSpace'], row['url']))
     return msgs
     
-      
+def create_email_msg(df_new):
+    msg = ['%s new ads in Wedding&Siemensstadt today' %(df_new.shape[0])]
+    if df_new.shape[0]==0:
+        return msg
+    for index, row in df_new.iterrows():
+        msg.append( '(kalt)%s€, (warm)%s€, %sR, %sm², private(%s)→ %s' %(row['price'], row['warmprice'], \
+                                                                  row['numberOfRooms'], row['livingSpace'], \
+                                                                    'Y' if row['privateOffer'] else 'N', \
+                                                                      row['url']))
+    return msg  
 #---main program----
 if __name__=='__main__':
 
@@ -73,22 +82,23 @@ if __name__=='__main__':
 
     [df_new, ids_keep] = immosearchnew(old_ids)
     print('ready to tweet')
-    ads_msgs = create_msgs(df_new)
- 
+    ads_msgs = create_twitter_msgs(df_new)
     print(ads_msgs)
- 
-    update_tweet(ads_msgs)
-    send_email(ads_msgs)
+   # update_tweet(ads_msgs)
+    
+    email_msg = creat_email_msg(df_new)
+    print(email_msg)
+   # send_email(email_msgs)
             
     if df_new.shape[0]==0:
       exit()
 
     #-----now save to the file------
-    df_keep = df_old[df_old['ID'].isin(ids_keep)]
-    print('Delete {} old ads'.format(df_old.shape[0] - df_keep.shape[0]))
-    frame = [df_new, df_keep]
-    df = pd.concat(frame, ignore_index = True)
-    df.index.name = 'ID'
+  #  df_keep = df_old[df_old['ID'].isin(ids_keep)]
+  #  print('Delete {} old ads'.format(df_old.shape[0] - df_keep.shape[0]))
+  #  frame = [df_new, df_keep]
+  #  df = pd.concat(frame, ignore_index = True)
+  #  df.index.name = 'ID'
 
     
-    gsdf.set_with_dataframe(wks, df, resize = True)
+   # gsdf.set_with_dataframe(wks, df, resize = True)
