@@ -63,7 +63,7 @@ def create_email_msg(df_new):
     for index, row in df_new.iterrows():
         msg.append( '(kalt)%s€, (warm)%s€, %sR, %sm², private(%s)→ %s' %(row['price'], row['warmprice'], \
                                                                   row['numberOfRooms'], row['livingSpace'], \
-                                                                    'Y' if row['privateOffer'] else 'N', \
+                                                                    'Y' if row['privateOffer']=='TRUE' else 'N', \
                                                                       row['url']))
     return msg  
 #---main program----
