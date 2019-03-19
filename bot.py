@@ -85,8 +85,8 @@ if __name__=='__main__':
     [df_new, ids_keep] = immosearchnew(old_ids)
     print('ready to tweet')
     twitter_msgs = create_twitter_msgs(df_new)
-   # print(twitter_msgs)
-   # update_tweet(ads_msgs)
+    print(twitter_msgs)
+    update_tweet(ads_msgs)
     
     email_msg = create_email_msg(df_new)
     print(email_msg)
