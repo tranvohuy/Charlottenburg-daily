@@ -84,11 +84,11 @@ if __name__=='__main__':
     print('ready to tweet')
     ads_msgs = create_twitter_msgs(df_new)
     print(ads_msgs)
-    update_tweet(ads_msgs)
+   # update_tweet(ads_msgs)
     
     email_msg = create_email_msg(df_new)
     print(email_msg)
-    send_email(email_msgs)
+    send_email(email_msg)
             
     if df_new.shape[0]==0:
       exit()
