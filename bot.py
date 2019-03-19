@@ -61,11 +61,13 @@ def create_email_msg(df_new):
     if df_new.shape[0]==0:
         return msg
     for index, row in df_new.iterrows():
-        print(row['privateOffer'])
-        print(type(row['privateOffer']))
-        msg.append( '(kalt)%s€, (warm)%s€, %sR, %sm², private(%s)→ %s' %(row['price'], row['warmprice'], \
+       # print(row['privateOffer'])
+       # print(type(row['privateOffer']))
+        msg.append( '%s€/%s€, %sR, %sm², private(%s), kitchen(%s), balcony(%s)→ %s' %(row['price'], row['warmprice'], \
                                                                   row['numberOfRooms'], row['livingSpace'], \
                                                                     'Y' if row['privateOffer']=='true' else 'N', \
+                                                                    'Y' if row['builtInKitchen']=='true' else 'N',\
+                                                                    'Y' if row['balcony']=='true' else 'N',\
                                                                       row['url']))
     return msg  
 #---main program----
