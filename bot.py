@@ -57,7 +57,7 @@ def create_twitter_msgs(df_new):
     return msgs
     
 def create_email_msg(df_new):
-    msg = ['%s new ads in Wedding&Siemensstadt today' %(df_new.shape[0])]
+    msg = ['%s new ads in Charlottenburg today' %(df_new.shape[0])]
     if df_new.shape[0]==0:
         return msg
     for index, row in df_new.iterrows():
