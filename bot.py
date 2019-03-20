@@ -88,7 +88,7 @@ if __name__=='__main__':
     print('ready to tweet')
     twitter_msgs = create_twitter_msgs(df_new)
     print(twitter_msgs)
-    update_tweet(ads_msgs)
+    update_tweet(twitter_msgs)
     
     email_msg = create_email_msg(df_new)
     print(email_msg)
