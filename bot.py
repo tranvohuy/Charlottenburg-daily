@@ -85,24 +85,26 @@ if __name__=='__main__':
 
 
     [df_new, ids_keep] = immosearchnew(old_ids)
+    if df_new.shape[0]!=0
+        df_new = df_new.sort_values(by=['numberOfRooms', 'warmprice'])
     print('ready to tweet')
     twitter_msgs = create_twitter_msgs(df_new)
     print(twitter_msgs)
-    update_tweet(twitter_msgs)
+    #update_tweet(twitter_msgs)
     
     email_msg = create_email_msg(df_new)
     print(email_msg)
-    send_email(email_msg)
+    #send_email(email_msg)
             
     if df_new.shape[0]==0:
       exit()
 
     #-----now save to the file------
-    df_keep = df_old[df_old['ID'].isin(ids_keep)]
-    print('Delete {} old ads'.format(df_old.shape[0] - df_keep.shape[0]))
-    frame = [df_new, df_keep]
-    df = pd.concat(frame, ignore_index = True)
-    df.index.name = 'ID'
+  #  df_keep = df_old[df_old['ID'].isin(ids_keep)]
+  #  print('Delete {} old ads'.format(df_old.shape[0] - df_keep.shape[0]))
+  #  frame = [df_new, df_keep]
+  #  df = pd.concat(frame, ignore_index = True)
+   # df.index.name = 'ID'
 
     
-    gsdf.set_with_dataframe(wks, df, resize = True)
+   # gsdf.set_with_dataframe(wks, df, resize = True)
