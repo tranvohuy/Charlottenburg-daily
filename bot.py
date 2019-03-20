@@ -85,7 +85,7 @@ if __name__=='__main__':
 
 
     [df_new, ids_keep] = immosearchnew(old_ids)
-    if df_new.shape[0]!=0
+    if df_new.shape[0]!=0:
         df_new = df_new.sort_values(by=['numberOfRooms', 'warmprice'])
     print('ready to tweet')
     twitter_msgs = create_twitter_msgs(df_new)
