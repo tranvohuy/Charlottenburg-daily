@@ -5,7 +5,10 @@ import random
 from random import choice
 import pandas as pd
 import time
-
+'''
+It is useful to look at the source code of Immobilienscout24 search page to understand the data structure of ads.
+http://json.parser.online.fr/ is a good website to decode json content.
+'''
 def urlquery(url):
     try:
         sleeptime = float(random.randint(1,6))/5
