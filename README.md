@@ -6,7 +6,7 @@
   * on personal Google Sheet with more details of the ads
   * to be sent to personal emails
   
-## What is the difference with using Immobilienscout24?
+## What is the difference with using Immobilienscout24 app?
 - First, I was just curious if I can do it by myself. Could I understand python modules? Could I read other people's codes?
 - By creating your own program, you can tailor/modify the content you want to see. For example, you may have an email like this
 ![emails_content](readmefiles/Screenshot_2019-03-22_14-19-40.png)
