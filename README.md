@@ -8,8 +8,10 @@
   
 ## What is the difference with using Immobilienscout24?
 - First, I was just curious if I can do it by myself. Could I understand python modules? Could I read other people's codes?
-- By creating your own program, you can tailor/modify the content you want to see. For example,
-
+- By creating your own program, you can tailor/modify the content you want to see. For example, you may have an email like this
+![emails_content](readmefiles/Screenshot_2019-03-22_14-19-40.png)
+      
+ We sort the ads according to rooms, warm price. We care whether the appartment is from private person or from a company. Does it have kitchen or balcony, etc?
 
 ## Run the project
 You need to do several things (more details in the reference):
