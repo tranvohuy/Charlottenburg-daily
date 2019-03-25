@@ -11,7 +11,9 @@
 - By creating your own program, you can tailor/modify the content you want to see. For example, you may have an email like this
 ![emails_content](readmefiles/Screenshot_2019-03-22_14-19-40.png)
       
- We sort the ads according to rooms, warm price. We care whether the appartment is from private person or from a company. Does it have kitchen or balcony, etc?
+ We sort the ads according to rooms, warm price. We care whether the flats/appartment is from private person or from a company. Does it have kitchen or balcony, etc?
+  - You can also focus on 2-room or 3-room flats.
+  - Are you curious how rent in Berlin changes, especially the flats that you used to live?
 
 ## Run the project
 You need to do several things (more details in the reference):
