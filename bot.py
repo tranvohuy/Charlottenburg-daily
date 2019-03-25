@@ -13,6 +13,10 @@ from send_email import send_email
 
 
 def get_client():
+    '''
+    Action
+    - Connect (get permission) to Google Sheet.
+    '''
     scopes = ['https://spreadsheets.google.com/feeds',
              'https://www.googleapis.com/auth/drive']
     json_creds = environ['google_cred']
@@ -23,6 +27,13 @@ def get_client():
     return gc
 
 def update_tweet(ads_msgs):
+    '''
+    Input 
+    ads_msgs: a list of strings (messages) to be posted on Twitter
+    Action
+    - connect to Twitter
+    - post ads_msgs on Twitter
+    '''
     consumer_key= environ['consumer_key']
     consumer_secret = environ['consumer_secret']
     access_key = environ['access_key']
@@ -32,7 +43,10 @@ def update_tweet(ads_msgs):
     api = tweepy.API(auth)
     
     status = ads_msgs[0]
+    '''
+    Twitter does not allow to post messages longer than 280 characters.
     
+    '''
     if len(ads_msgs)==1:
         api.update_status(status)
     else:
