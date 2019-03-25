@@ -11,7 +11,7 @@
 - By creating your own program, you can tailor/modify the content you want to see. For example, you may have an email like this
 ![emails_content](readmefiles/Screenshot_2019-03-22_14-19-40.png)
       
- We sort the ads according to rooms, warm price. We care whether the flats/appartment is from private person or from a company. Does it have kitchen or balcony, etc?
+ We sort the ads according to rooms, warm price (this number does not show up in a [general search](https://www.immobilienscout24.de/Suche/S-T/Wohnung-Miete/Berlin/Berlin/Charlottenburg-Charlottenburg/1,00-?enteredFrom=result_list#/)). We care whether the flats/appartment is from private person or from a company. Does it have kitchen or balcony, etc?
   - You can also focus on 2-room or 3-room flats.
   - Are you curious how rent in Berlin changes, especially the flats that you used to live?
 
