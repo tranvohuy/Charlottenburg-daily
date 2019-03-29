@@ -115,7 +115,7 @@ if __name__=='__main__':
     
     
     #-----now save to the file------
-    if df_new.shape[0]==0:
+    if df_new.shape[0]!=0:
         df_keep = df_old[df_old['ID'].isin(ids_keep)]
         print('Delete {} old ads'.format(df_old.shape[0] - df_keep.shape[0]))
         
