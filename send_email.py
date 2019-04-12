@@ -36,5 +36,5 @@ def send_email(ads_msgs):
         server.sendmail(sent_from, to, email_text.encode())
         server.close()
         print('Email sent.')
-    except Error as e:
+    except Exception as e:
         print('Something went wrong with emails: ', e)
