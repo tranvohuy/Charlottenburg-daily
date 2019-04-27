@@ -6,6 +6,7 @@ To use google auth, see https://github.com/shankarj67/python-gmail-api
 import smtplib
 
 def send_email(ads_msgs):
+    #ads_msgs: a list of strings.
     gmail_bot = environ['gmail_bot']
     gmail_bot_pwd = environ['gmail_bot_pwd']
 
