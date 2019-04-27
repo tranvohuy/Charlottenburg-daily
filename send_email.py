@@ -39,6 +39,7 @@ def send_email(ads_msgs):
         server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
         server.ehlo()
         server.login(gmail_bot, gmail_bot_pwd)
+        #https://docs.python.org/2/library/smtplib.html#smtplib.SMTP.sendmail
         server.sendmail(sent_from, to, email_text.encode())
         server.close()
         print('Email sent.')
