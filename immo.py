@@ -77,8 +77,8 @@ def immosearchnew(old_ids):
     while True:
       page+=1
      # url = 'https://www.immobilienscout24.de/Suche/S-T/P-%s/Wohnung-Miete/Berlin/Berlin' % (page)
-      url = 'https://www.immobilienscout24.de/Suche/S-T/P-%s/Wohnung-Miete/Berlin/Berlin/Charlottenburg-Charlottenburg/2,00' % (page)
-
+     # url = 'https://www.immobilienscout24.de/Suche/S-T/P-%s/Wohnung-Miete/Berlin/Berlin/Charlottenburg-Charlottenburg/2,00' % (page)
+      url = 'https://www.immobilienscout24.de/Suche/S-T/P-%s/Wohnung-Miete/Berlin/Berlin/Charlottenburg-Charlottenburg/2,00-3,00/-/EURO--900,00?' %(page)
       resultlist_json = None
       while resultlist_json is None:
           try:
